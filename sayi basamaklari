@@ -20,10 +20,10 @@ void main()
 		d = (a%1000)%100/10;//sayinin 1000 ile bolumunden elde edilen kalanin 100 ile bolumunden elde edilen kalanin 10 ile bolumunden elde edilen bolum onluk kisim olarak belirlendi
 		e = (a%1000)%100%10;
 
-		printf("binlik sayisi = %d\n",b);//girdilerin ekranda ciktisi alindi
-		printf("yuzluk sayisi = %d\n",c);
-		printf("onluk sayisi = %d\n",d);
-		printf("birlik sayisi = %d\n",e);
+		printf("%d tane binlik sayi \n",b);//girdilerin ekranda ciktisi alindi
+		printf("%d tane yuzluk sayi \n",c);
+		printf("%d tane onluk sayi \n",d);
+		printf("%d tane birlik sayi \n",e);
 	}
 	getch();
 }
