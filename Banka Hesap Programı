@@ -1,0 +1,115 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+
+int main()//sayisal tamsayi degerleri icin int atandi
+{
+	int hesapnumaram = 48151623,Sifre = 1084623,Paraekleme,Paracekme,Cikis,sec,Havalehesapnumarasi,HavalehesabiTCkimlikno,Faturasizhat; //gerekli baslangic degerleri belirlendi
+	float Bakiye = 500,girilenmiktar,cekilenmiktar,hesapozeti; //gerekli baslangic degerleri belirlendi virgullu miktarlar icin float kullanildi
+	 
+	{
+		printf("Hesap numaranizi giriniz:\n "); //hesap numarasi ve sifre komut ekraninan yansitildi
+		scanf_s("%d", &hesapnumaram);
+		printf("Sifrenizi giriniz: \n");
+		scanf_s("%d", &Sifre);
+	
+		if(hesapnumaram != 48151623 || Sifre != 1084623) //yanlis girilmesi durumunda if kosulu kondu
+		{
+			printf("Hatali giris yaptiniz. \n");
+			printf("Lutfen tekrar giris yapiniz. \n");
+		}
+		
+			else("hesapnumaram == '48151623' || Sifre == '1084623'");//dogru girilmesi durumunda devam edildi
+		
+				printf("Dogru giris yaptiniz: ");
+				printf("Hosgeldin Mete.\n ");
+		do //cikis yapilmadigi surece dongunun devam etmesi icin do while dongusu kullanılır
+		{
+			{
+			
+			printf("1.Para ekleme: 1\n");//menu icin komut ekrani ve çıktilari belirlendi 
+			printf("2.Para cekme: 2\n");
+			printf("3.Havale: 3\n");
+			printf("4.Faturasiz hat: 4\n");
+			printf("5.Hesap ozeti: 5\n");
+			printf("6.Cikis: 6\n");
+			printf("Seciminiz: " );//secime göre devam edlimesi icin sec komutu kullanildi
+			scanf("%d", &sec);
+			}
+			
+			switch(sec)//secilen islemi calistirmak icin switch case yapisi kullanildi
+			
+			{
+		
+			case 1://para ekleme durumunda 1 secimi uygulandi
+				printf("Eklemek istediginiz miktari giriniz: ");
+				scanf_s("%f", &girilenmiktar);
+
+				Bakiye = Bakiye + girilenmiktar; 
+				printf("Bakiye = %f\n", Bakiye);
+				printf("Menuye donmek icin bir tusa basiniz: \n");
+				getch();
+				break;
+		
+			case 2 ://para cekme durumunda 2 secimi uygulandi
+				printf("Cekmek istediginiz miktari giriniz: \n");
+				scanf_s("%f", &cekilenmiktar);
+			
+				if(cekilenmiktar > Bakiye)				//cekilen para baslangic parasindan fazla olmamasi icin if kosulu kondu
+				{
+					printf("Yeterli bakiyeniz bulunmamaktadır.\n ");
+					main();
+				}
+				Bakiye = Bakiye - cekilenmiktar;
+				printf("Bakiye = %f\n", Bakiye);
+				getch();
+				break;
+		
+			case 3 ://havale durumunda 3 secimi uygulandi
+				printf("Havale hesap numarasini giriniz: ");
+				scanf_s("%d", &Havalehesapnumarasi);
+				printf("Havale hesabi TC kimlik no: ");					
+				scanf_s("%d", &HavalehesabiTCkimlikno);
+				printf("Havale edeceginiz miktari giriniz: ");
+				scanf_s("%f", &girilenmiktar);
+			
+				if(girilenmiktar > Bakiye)//havale edilen miktarin baslangic parasinden fazla olmamasi icin if kosulu kondu
+				{						
+					printf("Yeterli bakiyeniz bulunmamaktadır. ");
+				}
+				Bakiye = Bakiye - girilenmiktar;
+				printf("Bakiye = %f\n", Bakiye);
+				printf("Menuye donmek icin bir tusa basiniz: \n");
+				getch();				
+				break;
+			case 4://faturasiz hat durumunda 4 secimi uygulandi 
+				printf("Telefon numarasini giriniz: \n");
+				scanf("%d", &Faturasizhat);
+				printf("Yuklemek istediginiz miktari giriniz: \n");
+				scanf("%f", &girilenmiktar);
+
+				Bakiye = Bakiye - girilenmiktar;
+				printf("Bakiye = %f\n", Bakiye);
+				printf("Menuye donmek icin bir tusa basiniz: \n");
+				getch();
+				break;
+			case 5 ://bakiye gösterme icin 5 secimi uygulandi
+				printf("Bakiyeniz 500 Tl \n");
+				scanf_s("%f", &Bakiye);
+				printf("Menuye donmek icin bir tusa basiniz: \n ");
+				getch();
+				break;
+			case 6 :
+				printf("Iyi gunler dileriz.");
+				getch();
+				return 0;
+					
+			}
+		}
+		while("cikis yapilmadigi surece donguye devam et");//cikis yapilmadigi surece dongunun devam etmesi icin do while dongusu kullanılır
+
+		
+	}
+	
+}
