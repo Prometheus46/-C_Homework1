@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int a;//girilecek sayi atandi
+	int b,c,d,e;//basamaklar icin degerler atandi
+	printf("Cozumlenecek olan dort basamakli bir sayiyi giriniz: ");
+	scanf("%d", &a);
+	
+	if((a<1000) || (a>9999))//dort haneli olmama durumunda if kosulu kondu
+	{
+		printf("Dort basamakli degil.");
+	}
+	
+	else 
+	{
+		b = (a/1000);//sayinin 1000 ile bolumunden elde edilen bolum binlik kisim olarak belirlendi
+		c = ((a%1000)/100);//sayinin 1000 ile bolumunden elde edilen kalanin 100 ile bolumunden elde edilen bolum yuzluk kisim olarak belirlendi
+		d = (a%1000)%100/10;//sayinin 1000 ile bolumunden elde edilen kalanin 100 ile bolumunden elde edilen kalanin 10 ile bolumunden elde edilen bolum onluk kisim olarak belirlendi
+		e = (a%1000)%100%10;
+
+		printf("binlik sayisi = %d\n",b);//girdilerin ekranda ciktisi alindi
+		printf("yuzluk sayisi = %d\n",c);
+		printf("onluk sayisi = %d\n",d);
+		printf("birlik sayisi = %d\n",e);
+	}
+	getch();
+}
